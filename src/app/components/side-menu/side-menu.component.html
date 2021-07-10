@@ -1,0 +1,10 @@
+<div id="sidebar-wrapper" class="no-mobile" >
+  <div class="device-no-manage-disable"></div>
+  <div class="sidebar-nav">
+    <div *ngFor="let item of menuItemList">
+      <cb-menu-button [routerTo]="item.routerTo" [labelText]="item.labelText" ></cb-menu-button>              
+    </div>
+  </div>
+</div>
+
+

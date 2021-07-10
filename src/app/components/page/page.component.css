@@ -1,0 +1,27 @@
+.header-container {
+    margin-bottom: 1.5em;
+}
+
+.header-text {
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    font-size: 1.7em;
+    line-height: .5;
+    letter-spacing: normal;
+    color: #18264f;
+    font-weight: 400;
+}
+
+
+
+
+
+@media (max-width: 767px) {
+    .header-container {
+        text-align: center;
+    }
+    .header-text {
+        line-height: normal;    
+    }
+}

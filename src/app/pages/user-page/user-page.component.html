@@ -1,0 +1,185 @@
+<cb-page [headerText]="'רישום משתמש'">
+
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="container-fluid registerUserForm">
+
+    <table class="userTable">
+      <tr>
+        <td class="userTd">
+          <span class="userSpan">שם פרטי</span>
+        </td>
+        <td class="inputTd">
+          <input class="userInput" type="text" #tagFirstName="ngModel" [(ngModel)]="NewUser.FirstName" name="FirstName" cbInputValidator="fname"
+            maxlength="50" required/>
+        </td>
+        <td>
+          <div id="errors_for_user_first_name" class="invalid-input-feedback" *ngIf="(tagFirstName.touched  || userForm.submitted) && tagFirstName.errors">
+            <div class="invalid-input-feedback" *ngIf="tagFirstName?.errors.required">
+              אנא הזן שם פרטי
+            </div>
+            <div class="invalid-input-feedback" *ngIf="tagFirstName?.errors.b_error">
+              שם פרטי אינו תקין
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="userTd">
+          <span class="userSpan">שם משפחה</span>
+        </td>
+        <td class="inputTd">
+          <input class="userInput" type="text" #tagLastName="ngModel" [(ngModel)]="NewUser.LastName" name="LastName" cbInputValidator="lname"
+            maxlength="50" required/>
+        </td>
+        <td>
+          <div id="errors_for_user_last_name" class="invalid-input-feedback" *ngIf="(tagLastName.touched  || userForm.submitted) && tagLastName.errors">
+            <div class="invalid-input-feedback" *ngIf="tagLastName?.errors.required">
+              אנא הזן שם פרטי
+            </div>
+            <div class="invalid-input-feedback" *ngIf="tagLastName?.errors.b_error">
+              שם משפחה אינו תקין
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="userTd">
+          <span class="userSpan">תעודת זהות</span>
+        </td>
+        <td class="inputTd">
+          <input class="userInput" type="text" #tagTz="ngModel" [(ngModel)]="NewUser.Tz" name="Tz" cbInputValidator="idnumber" maxlength="9"
+            required/>
+        </td>
+        <td>
+          <div id="errors_for_user_Tz" class="invalid-input-feedback" *ngIf="(tagTz.touched  || userForm.submitted) && tagTz.errors">
+            <div class="invalid-input-feedback" *ngIf="tagTz?.errors.required">
+              אנא הזן תעודת זהות
+            </div>
+            <div class="invalid-input-feedback" *ngIf="tagTz?.errors.b_error">
+              הערך שהזנת אינו תקין
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="userTd">
+          <span class="userSpan">תאריך לידה</span>
+        </td>
+        <td class="inputTd">
+          <input class="userInput inputDateWidth" type="date" #tagBirthdate="ngModel" [(ngModel)]="NewUser.Birthdate" name="Birthdate"
+            cbInputValidator="ValidBirthdate" required/>
+        </td>
+        <td>
+          <div id="errors_for_user_Birthdate" class="invalid-input-feedback" *ngIf="(tagBirthdate.touched  || userForm.submitted) && tagBirthdate.errors">
+            <div class="invalid-input-feedback" *ngIf="tagBirthdate?.errors.required">
+              אנא הזן תאריך לידה
+            </div>
+            <div class="invalid-input-feedback" *ngIf="tagBirthdate?.errors.b_error">
+              התאריך שהזנת אינו תקין
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="userTd">
+          <span class="userSpan">קופת חולים</span>
+        </td>
+        <td class="inputTd">
+          <select class="userInput inputComboWidth" #tagHealthFund="ngModel" [(ngModel)]="NewUser.HealthFund" name="HealthFund" required>
+            <option>מכבי </option>
+            <option>כללית </option>
+            <option>מאוחדת </option>
+            <option>לאומית </option>
+          </select>
+        </td>
+        <td>
+          <div id="errors_for_user_HealthFund" class="invalid-input-feedback" *ngIf="(tagHealthFund.touched || userForm.submitted) && tagHealthFund.errors">
+            <div class="invalid-input-feedback" *ngIf="tagHealthFund?.errors.required">
+              יש לבחור קופת חולים
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="userTd">
+          <span class="userSpan">מין</span>
+        </td>
+        <td class="inputTd">
+          <input type="radio" class="radio-type displayNone" #tagMaleFemale="ngModel" [value]="'male'" id="user-male" name="userMaleFemale"
+            [(ngModel)]="NewUser.MaleOrFemale" required>
+          <label id="male_label" class="radio-type-label paddingLeft" for="user-male">זכר</label>
+          <input type="radio" class="radio-type displayNone" #tagMaleFemale="ngModel" [value]="'female'" id="user-female" name="userMaleFemale"
+            [(ngModel)]="NewUser.MaleOrFemale" required>
+          <label id="female_label" class="radio-type-label" for="user-female">נקבה</label>
+        </td>
+        <td>
+          <div id="errors_for_user_MaleFemale" class="invalid-input-feedback" *ngIf="(tagMaleFemale.touched || userForm.submitted) && tagMaleFemale.errors">
+            <div class="invalid-input-feedback" *ngIf="tagMaleFemale?.errors.required">
+              יש לבחור מין זכר או נקבה
+            </div>
+          </div>
+        </td>
+      </tr>
+
+
+
+      <tr class="saveBtnTr">
+        <td colspan="3">
+          <button class="addUserButton" type="submit">שמירה</button>
+        </td>
+      </tr>
+
+    </table>
+  </form>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 no-padding">
+        <div class="table-container childrenDiv">
+          <div class="">
+            <div class="col-lg-12">
+              <span class="childrenTitle">ילדים</span>            
+              <a (click)="onAddChild()" class="addChildBtn">לחץ על מנת להוסיף ילד</a>             
+            </div>
+          </div>
+        </div>
+        <div class="table-container no-mobile">
+          <table class="table table-striped childrenTable">
+            <thead aria-hidden="true">
+              <tr class="childrenTableHeaders">
+                <th scope="col">שם</th>
+                <th scope="col">תעודת זהות</th>
+                <th scope="col">תאריך לידה</th>
+              </tr>
+            </thead>
+            <tbody id="childrenBodyTable">
+              <p class="noUsers" *ngIf="NewUser.Children == null || (NewUser.Children != null && NewUser.Children.length == 0)">אין נתונים</p>
+              <tr class="childrenTableTr" *ngFor="let child of NewUser.Children">
+                <td>
+                  <div class="cell-content">{{child.Name}}</div>
+                </td>
+                <td>
+                  <div class="cell-content">{{child.Tz}}</div>
+                </td>
+                <td>
+                  <div class="cell-content">{{child.Birthdate | date:'dd/MM/yyyy'}}</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</cb-page>
+
+
+<cb-dialog-modal #addChildModal [(visible)]="showAddChildDialog" (cbOnClose)="onDialogClose($event)" (cbOnCancel)="onDialogClose($event)"
+  (cbOnConfirm)="onAddChildConfirm($event)" [circleBackgroundColor]="'#fad760'">
+</cb-dialog-modal>

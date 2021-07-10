@@ -1,0 +1,133 @@
+<div class="modal-screen">
+  <div class="overlay" *ngIf="visible"></div>
+  <div class="col-xl-4 col-lg-5 col-md-5 modal-container" [@dialog] *ngIf="visible">
+    <cb-box>
+      <div class="content-container">
+        <div class="row">
+          <div class="col-xs-12 close-btn-container">
+            <button type="button" #closeBtn class="close-btn" (click)="onClose()">            
+            <span>סגירה</span>            
+            <i class="fa fa-times-circle-o"></i>
+          </button>
+          </div>
+        </div>
+        <div class="row" *ngIf="modalIcon">
+          <div class="col-xs-12 icon-container">
+            <div class="circle-container">
+              <div class="circle" [style.backgroundColor]="circleBackgroundColor">
+                <div class="img-container">
+                  <i [class]="modalIcon"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-11 col-xs-12 message-container" role="alert">
+            <div class="main-message" [innerHTML]="mainMessage"></div>
+            <div class="small-message" [innerHTML]="smallMessage"></div>
+          </div>
+        </div>
+
+        <div>
+
+          <form #childForm="ngForm" (ngSubmit)="onSubmit(childForm)" class="container-fluid addChildForm">
+            <table class="childTable">
+              
+              <tr>
+                <td class="childTd">
+                  <span class="childSpan">שם</span>
+                </td>
+                <td class="inputTd">
+                  <input class="childInput" type="text" #tagFirstName="ngModel" [(ngModel)]="Child.Name" name="ChildName" cbInputValidator="fname"
+                    maxlength="50" required/>
+                </td>
+              </tr>
+
+              <tr class="errorTr">
+                <td class="childTd"></td>
+                <td>
+                  <div id="errors_for_user_first_name" class="invalid-input-feedback" *ngIf="(tagFirstName.touched  || childForm.submitted) && tagFirstName.errors">
+                    <div class="invalid-input-feedback" *ngIf="tagFirstName?.errors.required">
+                      אנא הזן שם פרטי
+                    </div>
+                    <div class="invalid-input-feedback" *ngIf="tagFirstName?.errors.b_error">
+                      שם פרטי אינו תקין
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="childTd">
+                  <span class="userSpan">תעודת זהות</span>
+                </td>
+                <td class="inputTd">
+                  <input class="childInput" type="text" #tagTz="ngModel" [(ngModel)]="Child.Tz" name="Tz" cbInputValidator="idnumber" maxlength="9"
+                    required/>
+                </td>
+              </tr>
+
+              <tr class="errorTr">
+                <td class="childTd"></td>
+                <td>
+                  <div id="errors_for_user_Tz" class="invalid-input-feedback" *ngIf="(tagTz.touched  || childForm.submitted) && tagTz.errors">
+                    <div class="invalid-input-feedback" *ngIf="tagTz?.errors.required">
+                      אנא הזן תעודת זהות
+                    </div>
+                    <div class="invalid-input-feedback" *ngIf="tagTz?.errors.b_error">
+                      הערך שהזנת אינו תקין
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="childTd">
+                  <span class="userSpan">תאריך לידה</span>
+                </td>
+                <td class="inputTd">
+                  <input class="childInput childDateInput" type="date" #tagBirthdate="ngModel" [(ngModel)]="Child.Birthdate" name="Birthdate"
+                    required cbInputValidator="ValidBirthdate" />
+                </td>
+              </tr>
+
+              <tr class="errorTr">
+                <td class="childTd"></td>
+                <td>
+                  <div id="errors_for_user_Birthdate" class="invalid-input-feedback" *ngIf="(tagBirthdate.touched  || childForm.submitted) && tagBirthdate?.errors">
+                    <div class="invalid-input-feedback" *ngIf="tagBirthdate?.errors.required">
+                      אנא הזן תאריך לידה
+                    </div>
+                    <div class="invalid-input-feedback" *ngIf="tagBirthdate?.errors.b_error">
+                      התאריך שהזנת אינו תקין
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="2">
+                </td>
+              </tr>
+
+            </table>
+            
+            <div class="row">
+              <div class="col-xl-11 col-xs-12 buttons-container">
+                <div class="col-xl-6 col-lg-6 col-xs-6 button-container">
+                  <button type="button" #cancelBtn (click)="onCancel()">{{cancelBtnText}}</button>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-xs-6 button-container">
+                  <button type="submit" #confirmBtn>{{confirmBtnText}}</button>
+                </div>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </cb-box>
+  </div>
+</div>

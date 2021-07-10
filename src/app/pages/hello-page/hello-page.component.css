@@ -1,0 +1,10 @@
+.helloDiv{
+    font-weight: bolder;
+    padding-top:20px;
+}
+.inlineDiv{
+    display: inline-block;
+}
+.paddingDiv{
+    padding-right: 5px;
+}

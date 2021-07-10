@@ -1,0 +1,17 @@
+<div class="box-container" [ngClass]="{'not-shadow-mobile': notShadowMobile, 'permission-mobile': permissionMobile}">
+  <div class="header" *ngIf="header" (click)="onHeaderClick($event)">
+    <div class="header-content">
+      <div class="img-container">
+        <i [class]="imgHeaderSvg"></i>
+      </div>
+      <h3 class="text-header">
+        {{header}}
+      </h3>
+    </div>
+    <hr>
+  </div>
+
+  <div class="box-content">
+    <ng-content></ng-content>
+  </div>
+</div>

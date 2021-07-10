@@ -1,1 +1,195 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/*@import "https://use.fontawesome.com/releases/v5.0.7/css/all.css";*/
+
+
+/*@import '~font-awesome/css/font-awesome.css';*/
+
+
+
+body {
+    text-align: right;
+    background-color: #edf1f2;
+    line-height: 1;
+    /*font-size: 1.25vw;*/
+    font-size: 1em;
+    /* font-size: calc(0.5em + 0.581vw); */
+    font-family: SimplerPro;
+    font-weight: 400;
+}
+
+.error-message-container.validation-errors {
+    position: absolute;
+    top: 100%;
+}
+
+.form-error {
+    width: 100%;
+    text-align: center;
+    min-height: 3em;
+    position: relative;
+}
+
+input[type=password]::-ms-reveal,
+input[type=password]::-ms-clear {
+    display: none;
+}
+
+input[type=text]::-ms-clear {
+    display: none;
+}
+
+.form-control {
+    /* border-color: #cccccc; */
+    /* Commited because Accessibility contrast */
+    border-color: #57585C;
+    color: #18264f;
+}
+
+.form-control.ng-invalid.ng-touched,
+.form-submitted .form-control.ng-invalid {
+    border-color: #d50000;
+}
+
+.form-control.ng-invalid.ng-touched:focus {
+    box-shadow: 0 0 0 0.2rem rgba(213, 0, 0, .25);
+}
+
+.invalid-input-feedback {
+    color: #d50000;
+    line-height: 1.31;
+    font-size: 0.8125em;
+}
+
+/*bz-ddl.ng-invalid.ng-touched .value-selected-container,
+.form-submitted bz-ddl.ng-invalid .value-selected-container {
+    border-color: #d50000;
+}
+
+bz-ddl.ng-invalid.ng-touched .value-selected-container:focus {
+    box-shadow: 0 0 0 0.2rem rgba(213, 0, 0, .25);
+    outline: none;
+}*/
+
+.input-label {
+    font-size: 0.875em;
+    cursor: pointer;
+    width: auto;
+    position: relative;
+}
+
+.disabled .input-label {
+    cursor: not-allowed;
+}
+
+.radio-type-label {
+    padding: 0 25px 0 0;
+    position: relative;
+}
+
+.radio-type+.radio-type-label:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    transition: all .35s;
+    background-color: #ffffff;
+    border: solid 1px #16254f;
+    border-radius: 8px;
+}
+
+.radio-type:checked+.radio-type-label:before {
+    background-color: #16254f;
+}
+
+.radio-type:focus+.radio-type-label:after {
+    position: absolute;
+    content: "";
+    top: -2px;
+    right: -2px;
+    width: 20px;
+    transition: all .35s;
+    height: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0);
+    outline: none;
+    box-shadow: 0 0 0 1px #fff, 0 0 0 2px #16254f;
+}
+
+.overflow-text-ellipsis {
+    text-overflow: ellipsis!important;
+    overflow: hidden!important;
+}
+
+.ltr-direction {
+    direction: ltr!important;
+}
+
+.ltr-right {
+    direction: ltr;
+    text-align: right;
+}
+
+.no-margin {
+    margin: 0!important;
+}
+
+.no-padding {
+    padding: 0!important;
+}
+
+.float-right {
+    float: right!important;
+}
+
+.float-left {
+    float: left!important;
+}
+
+.inline-block {
+    display: inline-block!important;
+}
+
+.pointer {
+    cursor: pointer!important;
+}
+
+.text-overflow-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.col-xs-5-5 {
+    width: 45.83333333333333%;
+    float: right;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+    .no-desktop {
+        display: none!important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    body {
+        /*font-size: 3vw;*/
+    }
+    .row {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    .no-mobile {
+        display: none!important;
+    }
+    .mobile-bold {
+        font-weight: bold!important;
+    }
+}

@@ -1,0 +1,254 @@
+.table-container {
+    margin: 20px 0 0 0;
+
+    .header-for-table {
+        margin: 0 0 .5em 0;
+
+        div {
+            padding: 0;
+        }
+    }
+
+    table {
+        width: 100%;
+        margin-bottom: 0;
+        display: block;
+        overflow: hidden;
+
+        thead, tbody, tr, td, th { display: block; }
+
+        td, th{
+            padding: .75em .75em .75em .75em;
+            width: 12.5%;
+            float: right;
+            position: relative;
+        }
+
+        td {
+            padding: 0 .75em;
+        }
+
+        thead {
+            background-color: #ffffff;
+            border: solid 1px #ebebeb;
+
+            tr {
+                padding: 0.625em 0;
+            }
+
+            th {
+                color: #666666;
+                font-size: 0.8125em;
+                border-top: none;
+                border-bottom: none;
+                border-right: 1px solid #e6e6e6;
+            }
+
+            th:first-child {
+                border-right: none;
+            }
+        }
+
+        tr:after {
+            content: ' ';
+            display: block;
+            visibility: hidden;
+            clear: both;
+        }
+
+        tbody {
+            max-height: 170px;
+            overflow-y: auto;
+
+            tr {
+                background-color: #fff;
+            }
+
+            tr:nth-of-type(odd) {
+                 background-color: #fafafa;
+             }
+
+             tr:hover {
+                 background-color: #ebebdd;
+             }
+
+             td {
+                    .cell-content {
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        direction: ltr;
+                        padding-top: 1.25em;
+                        padding-bottom: 1.25em;
+                        line-height: 0.01;
+                    }                   
+             }
+        }
+
+        tbody::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .row-paggintation {
+        padding: 1.25em 1.5rem;
+        background: #fff;
+
+        .select-count-rows-container, .select-page-container {
+            font-size: 0.75em;
+            font-weight: 400;
+        }
+    }
+
+    // Pagination
+    .float-left.select-page-container {
+        div {
+            display: inline-block;
+        }
+
+        button {
+            border: none;
+            background: none;
+        }
+
+        input {
+            width: 2em;
+            text-align: center;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+}
+.afterAddUserText{
+    font-size: 16px;
+    text-align: right;
+    color: #18254f;
+    margin-bottom: 20px;
+}
+
+h6{
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    font-size: 1.7em;
+    line-height: .5;
+    letter-spacing: normal;
+    color: #18264f;
+    font-weight: 400;
+}
+.tdPadding{
+    padding-right: 30px;
+}
+.addChildBtn{
+    color: #696969;
+    text-decoration: underline;
+    cursor:pointer;
+}
+.addChildBtn:hover{
+    color: #0056b3;
+}
+.childrenTable{
+    height: 100% !important;
+    background-color: #f9f9f9;
+    max-height: 200px;
+    
+}
+.childrenTable th, .childrenTable td{
+    width: 33.33% !important;
+}
+.childrenDiv{
+    margin-top:0;
+}
+.childrenTableHeaders{
+    height: 35px !important;
+    padding: 0 !important;
+}
+.noUsers{
+    font-size: 18px;
+    color: #5b5b5b;
+    padding-right: 10px;;
+    padding-top: 85px;
+}
+.submit-div{
+    padding-top:20px;
+}
+
+
+.userInput{
+    padding: 5px;
+    border-radius: 7px;
+    border: gray 1px solid;
+    font-size: 16px;
+}
+.userTable{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+.addUserButton{
+    padding: 5px;
+    color: #fff;
+    border-radius: 7px;
+    background-color: #18264f;
+    border: none;
+    width: 140px;
+    margin-top: 10px;
+    height: 40px;
+    font-weight: bolder;
+    font-size: 22px;
+}
+.userTd{
+    width: 120px;
+}
+.registerUserForm{
+    padding-right: 0;
+}
+.inputTd{
+    width:220px;
+}
+.addChildBtn{
+    padding-right:93px;
+}
+.inputDateWidth{
+    width:94.5%;
+    height: 31px;
+}
+.displayNone{
+    display: none;
+}
+.paddingLeft{
+    padding-left:30px;
+}
+.userTable tr{
+    height:40px;
+}
+.saveBtnTr{
+    position: absolute;
+    top: 580px;
+}
+.inputComboWidth{
+    width:94.5%;
+}
+
+@media (max-width: 767px) {
+    .row-btn {
+        margin-top: 2em;        
+    }
+
+    .div-tel{
+        margin-top:20px;
+    }
+    .childrenDiv h6{
+        text-align: center;
+        line-height: normal;
+    }
+}
+
+
+
+
+
